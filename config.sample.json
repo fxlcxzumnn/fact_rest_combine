@@ -1,0 +1,17 @@
+{
+    "CREDENTIALS_PATH": "credentials.json",
+    "TOKEN_PICKLE_PATH": "token.pickle",
+    "VARIABLE_PATH": "variable.json",
+    "FACT_SHEET": {
+        "spreadsheet_id": "01234567890123456789012345678901234567890123",
+        "sheet_name": "name"
+    },
+    "RESTAURANT_SHEET":{
+        "spreadsheet_id": "01234567890123456789012345678901234567890123",
+        "sheet_name": "name"
+    }, 
+    "OUTPUT_SHEET":{
+        "spreadsheet_id": "01234567890123456789012345678901234567890123",
+        "sheet_name": "name"
+    }
+}
