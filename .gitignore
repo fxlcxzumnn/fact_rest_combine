@@ -3,3 +3,6 @@
 /config.json
 /token.pickle
 /credentials.json
+__pycache__
+/venv_aws/
+/venv_dev/
