@@ -6,11 +6,17 @@ Go to https://developers.google.com/sheets/api/quickstart/python
 Click the blue "ENABLE THE GOOGLE SHEETS API" button.
 Copy the credentials.json file to project root folder.
 
+In AWS, IAM Role
+Create new role "aws-lambda-execute"
+Attach policies "AWSLambdaExecute"
+Remember role ARN (arn:aws:...execute) as [IAM_ROLE_ARN]
+
 ##############################
 
 AWS_PROFILE=xxx         # As you like
 AWS_REGION=us-east-2    # As you like
 MAIN_PWD=${PWD}         # Project root folder, contains this README.txt
+AWS_IAM_ROLE_ARN=XXX    # fill [IAM_ROLE_ARN]
 
 sudo apt-get install python3-venv
 
@@ -50,7 +56,7 @@ cd ${MAIN_PWD}
 aws lambda create-function \
     --function-name freedomhi_fact_rest_combine \
     --runtime python3.7 \
-    --role arn:aws:iam::892038990546:role/aws-lambda-execute \
+    --role arn:${AWS_IAM_ROLE_ARN} \
     --handler lambda_handler.lambda_handler \
     --zip-file fileb://build/lambda.zip \
     --profile ${AWS_PROFILE} \
