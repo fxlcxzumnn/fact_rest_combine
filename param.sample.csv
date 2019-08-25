@@ -1,0 +1,20 @@
+input_be_spreadsheet_id,xxxxxxxxx [ FILL ME ] xxxxxxxxxxxxxxxxxxxxxx
+input_be_sheet_title,[ FILL ME ]
+input_be_is_active_col_name,isActive
+input_be_id_col_name,id
+input_be_name_col_name,name
+input_be_phone_no_col_name,phoneNo
+input_be_address_col_name,address
+
+input_fact_spreadsheet_id,xxxxxxxxx [ FILL ME ] xxxxxxxxxxxxxxxxxxxxxx
+input_fact_sheet_title,[ FILL ME ]
+input_fact_timestamp_col_name,時間戳記
+input_fact_name_col_name,商家名稱
+input_fact_address_col_name,餐廳確實地址（如有）
+input_fact_phone_col_name,餐廳電話號碼（如有）
+
+output_spreadsheet_id,xxxxxxxxx [ FILL ME ] xxxxxxxxxxxxxxxxxxxxxx
+output_sheet_title,output_v1
+
+var_spreadsheet_id,xxxxxxxxx [ FILL ME ] xxxxxxxxxxxxxxxxxxxxxx
+var_sheet_title,var

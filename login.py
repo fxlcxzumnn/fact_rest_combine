@@ -12,23 +12,16 @@ def read_json(fn):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Combine fact and restaurant data')
-    parser.add_argument('config_file', type=str, help='config file')
+    parser.add_argument('credentials_path', type=str)
+    parser.add_argument('token_pickle_path', type=str)
     args = parser.parse_args()
 
-    if not os.path.isfile(args.config_file):
-        print('config file {0} not exist'.format(parser.config_file) ,file=sys.stderr)
+    if not os.path.isfile(args.credentials_path):
+        print('credentials file {0} not exist'.format(parser.credentials_path) ,file=sys.stderr)
         exit(1)
 
-    config = read_json(args.config_file)
-    if 'CREDENTIALS_PATH' not in config:
-        print('config[CREDENTIALS_PATH] not exist' ,file=sys.stderr)
-        exit(1)
-    if 'TOKEN_PICKLE_PATH' not in config:
-        print('config[TOKEN_PICKLE_PATH] not exist' ,file=sys.stderr)
-        exit(1)
-
-    CREDENTIALS_PATH=config['CREDENTIALS_PATH']
-    TOKEN_PICKLE_PATH=config['TOKEN_PICKLE_PATH']
+    CREDENTIALS_PATH=args.credentials_path
+    TOKEN_PICKLE_PATH=args.token_pickle_path
     SCOPES=['https://www.googleapis.com/auth/spreadsheets']
     
     flow = InstalledAppFlow.from_client_secrets_file(
